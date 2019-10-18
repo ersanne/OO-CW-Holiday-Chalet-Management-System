@@ -1,0 +1,23 @@
+﻿<Window x:Class="Presentation.CarHireWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation"
+        mc:Ignorable="d"
+        Title="CarHire" Height="167.045" Width="200.284">
+    <Grid x:Name="Grid" Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="StartDateLabel" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="66" Height="24" Content="Start date:"/>
+        <DatePicker x:Name="StartDatePicker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="81,12,0,0"/>
+        <Label x:Name="EndDateLabel" Content="End date:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="66" Height="24"/>
+        <DatePicker x:Name="EndDatePicker" HorizontalAlignment="Left" Margin="81,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="DriverLabel" Content="Driver:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.153,-0.335" Width="66" Height="23"/>
+        <TextBox x:Name="DriverBox" HorizontalAlignment="Left" Height="23" Margin="81,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" RenderTransformOrigin="-0.019,0.179"/>
+        <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" Margin="108,98,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="SaveBtn_Click"/>
+        <Button x:Name="QuitBtn" Content="Quit" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="QuitBtn_Click"/>
+
+    </Grid>
+</Window>

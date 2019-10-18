@@ -1,0 +1,20 @@
+﻿<Window x:Class="Presentation.GuestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation"
+        mc:Ignorable="d"
+        Title="AddGuest" Height="161.079" Width="257.386">
+    <Grid x:Name="Grid">
+        <Label x:Name="NameLabel" Content="Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.081,0.486" Width="104" Height="23"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="23" Margin="119,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="PassportLabel" Content="Passport Number:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.081,0.486" Height="28"/>
+        <Label x:Name="AgeLabel" Content="Age:" HorizontalAlignment="Left" Margin="10,66,0,0" RenderTransformOrigin="0.081,0.486" Width="104" Height="32" VerticalAlignment="Top"/>
+        <TextBox x:Name="PassportBox" HorizontalAlignment="Left" Height="23" Margin="119,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AgeBox" HorizontalAlignment="Left" Height="23" Margin="119,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="QuitBtn" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="QuitBtn_Click" Content="Quit"/>
+        <Button x:Name="SaveBtn" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="30" Click="SaveBtn_Click" Margin="164,94,0,0"/>
+
+    </Grid>
+</Window>

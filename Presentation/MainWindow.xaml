@@ -1,0 +1,81 @@
+﻿<Window x:Name="Window" x:Class="Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NapierHoliday"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="595">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="ExitBtn" Content="Quit" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top" Width="130" Height="35" Click="ExitBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="222,424,0,0" VerticalAlignment="Top" Width="127" Height="35" Click="BackBtn_Click"/>
+        <Label x:Name="MainTitle" Content="Napier Chalet Managemant" HorizontalAlignment="Center" Margin="108,10,103,0" VerticalAlignment="Top" Height="45" Width="306" FontSize="24"/>
+        <Grid x:Name="BookingPage" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="587" d:IsHidden="True">
+            <Label x:Name="StartDateLabel" Content="Start Date" HorizontalAlignment="Left" Margin="20,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.657,1.057" Height="24" Width="63"/>
+            <Label x:Name="EndDateLabel" Content="End Date:" HorizontalAlignment="Left" Margin="20,132,0,0" VerticalAlignment="Top" Height="24" Width="63" RenderTransformOrigin="0.662,2.708"/>
+            <DatePicker x:Name="StartDatePicker" HorizontalAlignment="Left" Margin="88,103,0,0" VerticalAlignment="Top" Width="155"/>
+            <DatePicker x:Name="EndDatePicker" HorizontalAlignment="Left" Margin="88,133,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.561,-0.208"/>
+            <Button x:Name="BookingSubmitBtn" Content="Save" HorizontalAlignment="Left" Margin="477,425,0,0" VerticalAlignment="Top" Width="100" Height="34" Click="BookingSubmitBtn_Click"/>
+            <CheckBox x:Name="BreakfastCheck" HorizontalAlignment="Left" Margin="269,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.028,0.467" Width="126" Content="Breakfast Meals" Height="18"/>
+            <CheckBox x:Name="EveningCheck" Content="Evening Meals" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="269,108,0,0" Height="19" Width="120"/>
+            <ListBox x:Name="ChaletListBox" HorizontalAlignment="Left" Height="214" Margin="346,193,0,0" VerticalAlignment="Top" Width="117"/>
+            <Label x:Name="ChaletsLabel" Content="Select Chalet" HorizontalAlignment="Left" Margin="346,162,0,0" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.692,0.5"/>
+            <ListBox x:Name="GuestListBox" ItemsSource="{Binding}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="139" Margin="60,193,0,0" VerticalAlignment="Top" Width="138"/>
+            <ListBox x:Name="CarHireListBox" ItemsSource="{Binding}" DisplayMemberPath="Driver" HorizontalAlignment="Left" Height="139" Margin="203,193,0,0" VerticalAlignment="Top" Width="138"/>
+            <Label x:Name="ChaletsListBox_Copy" Content="Guests" HorizontalAlignment="Left" Margin="60,162,0,0" VerticalAlignment="Top" Width="138" RenderTransformOrigin="1.196,-0.692"/>
+            <Label x:Name="ChaletsListBox_Copy1" Content="Car Rentals" HorizontalAlignment="Left" Margin="203,161,0,0" VerticalAlignment="Top" Width="138" RenderTransformOrigin="0.681,-2.423"/>
+            <Button x:Name="ViewGuestBtn" Content="View Selected" HorizontalAlignment="Left" Margin="60,337,0,0" VerticalAlignment="Top" Width="138" Click="ViewGuestBtn_Click"/>
+            <Button x:Name="ViewCarHireBtn" Content="View Selected" HorizontalAlignment="Left" Margin="203,337,0,0" VerticalAlignment="Top" Width="138" Click="ViewCarHireBtn_Click"/>
+            <Button x:Name="AddGuestBtn" Content="Add" HorizontalAlignment="Left" Margin="60,386,0,0" VerticalAlignment="Top" Width="138" Click="AddGuestBtn_Click"/>
+            <Button x:Name="AddCarHireBtn" Content="Add" HorizontalAlignment="Left" Margin="203,386,0,0" VerticalAlignment="Top" Width="138" Click="AddCarHireBtn_Click"/>
+            <Label x:Name="CustomerNumberLabel" Content="Customer Number:" HorizontalAlignment="Left" Margin="20,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.105,0.038" Width="117"/>
+            <TextBox x:Name="CustomerNumberBox" HorizontalAlignment="Left" Height="26" Margin="142,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" IsReadOnly="True"/>
+            <Label x:Name="BookingRefLabel" Content="Booking ref:" HorizontalAlignment="Left" Margin="269,66,0,0" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.214,0.231"/>
+            <TextBox x:Name="BookingRefBox" HorizontalAlignment="Left" Height="26" Margin="355,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+            <Button x:Name="ViewInvoiceBtn" Content="View Invoice" HorizontalAlignment="Left" Margin="372,425,0,0" VerticalAlignment="Top" Width="100" Height="34" RenderTransformOrigin="0.63,0.559" Click="ViewInvoiceBtn_Click"/>
+            <Button x:Name="DeleteBookingBtn" Content="Delete Booking" HorizontalAlignment="Left" Margin="477,386,0,0" VerticalAlignment="Top" Width="100" Height="34" RenderTransformOrigin="0.63,0.559" Click="DeleteBookingBtn_Click"/>
+            <Button x:Name="DeleteGuestBtn" Content=" Delete Selected" HorizontalAlignment="Left" Margin="60,362,0,0" VerticalAlignment="Top" Width="138" Click="DeleteGuestBtn_Click"/>
+            <Button x:Name="DeleteCarHireBtn" Content=" Delete Selected" HorizontalAlignment="Left" Margin="203,362,0,0" VerticalAlignment="Top" Width="138" Click="DeleteCarHireBtn_Click"/>
+        </Grid>
+        <Grid x:Name="CustomerPage" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="587">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="296" Margin="10,106,0,0" Stroke="Black" VerticalAlignment="Top" Width="406"/>
+            <Label x:Name="CusNameLabel" Content="Customer Name:" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top" Width="129" Height="30"/>
+
+            <TextBox x:Name="CusAddressBox" HorizontalAlignment="Left" Height="90" Margin="173,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" AcceptsReturn="True" TextChanged="CusAddressBox_TextChanged"/>
+            <ListBox x:Name="CusListBox" ItemsSource="{Binding}" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="296" Margin="428,106,0,0" VerticalAlignment="Top" Width="149" SelectionChanged="CusListBox_SelectionChanged"/>
+            <Label x:Name="CustomerNumLabel" Content="Customer Number:" HorizontalAlignment="Left" Margin="39,115,0,0" VerticalAlignment="Top" Height="30" Width="129"/>
+            <TextBox x:Name="CusNumBox" HorizontalAlignment="Left" Height="30" Margin="173,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="CusNumBox_TextChanged"/>
+            <Label x:Name="CusAddressLabel" Content="Customer Address:" HorizontalAlignment="Left" Margin="40,185,0,0" VerticalAlignment="Top" Width="129"/>
+            <Button x:Name="CusFindBtn" Content="Find" HorizontalAlignment="Left" Margin="328,115,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="CusFindBtn_Click"/>
+            <TextBox x:Name="CusNameBox" HorizontalAlignment="Left" Height="30" Margin="173,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="CusNameBox_TextChanged"/>
+            <Button x:Name="CusSubmitBtn" HorizontalAlignment="Left" Margin="428,424,0,0" VerticalAlignment="Top" Width="149" Height="35" Click="CusSubmitBtn_Click" Content="Submit"/>
+            <Label x:Name="CusLabel" Content="Customers:" HorizontalAlignment="Left" Margin="428,75,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
+            <ListBox x:Name="CusBookingsListBox" HorizontalAlignment="Left" Height="90" Margin="173,302,0,0" VerticalAlignment="Top" Width="150"/>
+            <Label x:Name="CusAssociatedBookingLabel" Content="Associated Bookings:" HorizontalAlignment="Left" Margin="39,302,0,0" VerticalAlignment="Top" Width="129"/>
+            <Button x:Name="CusViewBookingBtn" Content="View" HorizontalAlignment="Left" Margin="328,302,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="ViewBookingBtn_Click"/>
+            <Button x:Name="CusEditBookingBtn" Content="Edit" HorizontalAlignment="Left" Margin="328,337,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="EditBookingBtn_Click"/>
+            <Button x:Name="CusDeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="328,150,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="CusDeleteBtn_Click"/>
+        </Grid>
+        <Grid x:Name="StartPage" d:IsHidden="True">
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="160" Margin="10,75,0,0" Stroke="Black" VerticalAlignment="Top" Width="567"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="160" Margin="10,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="567"/>
+            <Button x:Name="EditCustomerBtn" Content="Edit Customer" HorizontalAlignment="Left" Margin="410,327,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="EditCustomerBtn_Click"/>
+
+            <Button x:Name="AddBookingBtn" Content="Add Booking" HorizontalAlignment="Left" Margin="19,118,0,0" VerticalAlignment="Top" Width="120" Height="80" Click="AddBookingBtn_Click"/>
+            <Button x:Name="EditBookingBtn" Content="Edit Booking" HorizontalAlignment="Left" Margin="410,173,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="EditBookingBtn_Click"/>
+            <Button x:Name="AddCustomerBtn" Content="Add Customer" HorizontalAlignment="Left" Margin="19,284,0,0" VerticalAlignment="Top" Width="120" Height="80" Click="AddCustomerBtn_Click"/>
+            <Label Content="Booking Management" HorizontalAlignment="Left" Margin="19,84,0,0" VerticalAlignment="Top" Height="34" Width="200"/>
+            <Button x:Name="ViewBookingBtn" Content="View Booking" HorizontalAlignment="Left" Margin="263,173,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="ViewBookingBtn_Click"/>
+            <Button x:Name="ViewCustomerBtn" Content="View Customer" HorizontalAlignment="Left" Margin="263,327,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="ViewCustomerBtn_Click"/>
+            <Label Content="Customer Management" HorizontalAlignment="Left" Margin="19,253,0,0" VerticalAlignment="Top" Height="34" Width="200"/>
+            <TextBox x:Name="StartBookingRefBox" HorizontalAlignment="Left" Height="23" Margin="335,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Please enter a Customer Number to view or edit:" HorizontalAlignment="Left" Margin="263,253,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.079,-0.538"/>
+            <TextBox x:Name="StartCustomerNumBox" HorizontalAlignment="Left" Height="23" Margin="335,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Please enter a Booking Reference to view or edit:" HorizontalAlignment="Left" Margin="263,104,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.079,-0.538"/>
+        </Grid>
+
+    </Grid>
+</Window>
